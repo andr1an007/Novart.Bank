@@ -70,14 +70,6 @@ document.querySelectorAll(".nav-item[data-page]").forEach((button) => {
 
 
 
-closeButton.addEventListener("click", () => {
-  window.close();
-
-  setTimeout(() => {
-    window.location.href = "signin.html";
-  }, 100);
-});
-
 
 
 
@@ -2274,3 +2266,16 @@ if (typeof updatePageTitle === "function") {
 
 
 
+confirmDeleteAccount.addEventListener("click", () => {
+  window.close();
+
+  setTimeout(() => {
+    window.location.href = "register.html";
+  }, 100);
+});
+
+
+
+document.getElementById("myButton").addEventListener("click", () => {
+  window.location.href = "signin.html";
+});
