@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="app-shell">
+        <!-- LEFT MENU -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <img class="logo" src="img/logo2.0.png" alt="">
+            </div>
+
+            <nav class="sidebar-nav">
+                <p data-i18n="general" class="nav-label">General</p>
+
+                <button class="nav-item active" data-page="dashboard">
+                    <i class="bi bi-grid-fill"></i>
+                    <span data-i18n="dashboard">Dashboard</span>
+                </button>
+
+                <button class="nav-item" data-page="wallet">
+                    <i class="bi bi-wallet2"></i>
+                    <span data-i18n="wallet">Wallet</span>
+                </button>
+
+                <button class="nav-item" data-page="analytics">
+                    <i class="bi bi-bar-chart-line"></i>
+                    <span data-i18n="analytics">Analytics</span>
+                </button>
+
+                <button class="nav-item" data-page="archive">
+                    <i class="bi bi-archive"></i>
+                    <span data-i18n="archive">Archive</span>
+                </button>
+
+                <button class="nav-item" data-page="reporting">
+                    <i class="bi bi-broadcast"></i>
+                    <span data-i18n="reporting">Reporting</span>
+                </button>
+
+                <p data-i18n="tools" class="nav-label tools-label">Tools</p>
+
+                <button class="nav-item" data-page="ai-insights">
+                    <i class="bi bi-magic"></i>
+                    <span data-i18n="ai">AI Insights</span>
+                </button>
+
+                <button class="nav-item" data-page="savings">
+                    <i class="bi bi-safe"></i>
+                    <span data-i18n="savings_planner">Savings Planner</span>
+                </button>
+
+                <button class="nav-item" data-page="tracker">
+                    <i class="bi bi-easel2"></i>
+                    <span data-i18n="monthly_tracker">Monthly Tracker</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="nav-item" data-page="help">
+                    <i class="bi bi-question-circle"></i>
+                    <span data-i18n="help">Help Center</span>
+                </button>
+
+                <button class="nav-item" data-page="settings">
+                    <i class="bi bi-gear"></i>
+                    <span data-i18n="settings">Settings</span>
+                </button>
+
+                <button id="closeButton" class="nav-item logout" type="button">
+                    <i class="bi bi-box-arrow-left"></i>
+                    <span data-i18n="logout" class="logout">Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="main-area">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Open menu">
+                        <i class="bi bi-list"></i>
+                    </button>
+
+                    <h1 id="pageTitle">Dashboard</h1>
+                </div>
+
+                <div class="topbar-actions">
+                    <button class="topbar-icon" type="button" aria-label="Messages">
+                        <i class="bi bi-envelope"></i>
+                    </button>
+
+                    <button class="topbar-icon" type="button" aria-label="Notifications">
+                        <i class="bi bi-bell"></i>
+                    </button>
+
+                    <div class="topbar-divider"></div>
+                    <div class="header-account" id="headerAccount">
+                        <button class="header-account__button" id="headerAccountButton" type="button">
+                            <img id="headerProfileAvatar" src="img/Andrian.jpeg" alt="Profile photo" />
+                            <span>Konovart Andrian</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </button>
+
+                        <div class="header-account__menu" id="headerAccountMenu">
+                            <button class="header-account__new" id="createNewAccount" type="button">
+                                <i class="bi bi-person-plus"></i>
+                                <div data-i18n="new_account">
+                                    Create new account
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+
+
+
+
+
+
+
+
+
+            <main class="pages-wrapper">
+                <section class="page active" id="dashboard">
+                    <div class="dashboard-greeting">
+                        <h2 data-i18n="greeting" id="greetingText">Good morning, Andrian! 👋🏻</h2>
+                        <p id="currentDate"></p>
+                    </div>
+
+
+
+
+
+                    <div class="dashboard-layout">
+                        <div class="dashboard-main-column">
+                            <div class="finance-summary">
+                                <article class="summary-card">
+                                    <span data-i18n="income" class="summary-card__label">Total Income</span>
+                                    <strong class="summary-card__amount" id="totalIncome">$974.99</strong>
+
+                                    <p class="summary-card__comparison">
+                                    <div data-i18n="last_week">
+                                        from last week
+                                    </div>
+                                    <b class="is-positive" id="incomeChange">
+                                        <i class="bi bi-arrow-up-right"></i> 7.85%
+                                    </b>
+                                    </p>
+                                </article>
+
+                                <article class="summary-card">
+                                    <span data-i18n="expense" class="summary-card__label">Total Expense</span>
+                                    <strong class="summary-card__amount" id="totalExpense">$425.30</strong>
+
+                                    <p class="summary-card__comparison">
+                                        <div data-i18n="last_week">
+                                        from last week
+                                    </div>
+                                        <b class="is-negative" id="expenseChange">
+                                            <i class="bi bi-arrow-down-left"></i> 22.30%
+                                        </b>
+                                    </p>
+                                </article>
+
+                                <article class="summary-card">
+                                    <span data-i18n="total_savings" class="summary-card__label">Total Savings</span>
+                                    <strong class="summary-card__amount" id="totalSavings">$549.61</strong>
+
+                                    <p class="summary-card__comparison">
+                                        <div data-i18n="last_week">
+                                        from last week
+                                    </div>
+                                        <b class="is-positive" id="savingsChange">
+                                            <i class="bi bi-arrow-up-right"></i> 9.50%
+                                        </b>
+                                    </p>
+                                </article>
+                            </div>
+
+                            <section class="wallet-widget" id="walletWidget">
+                                <div class="wallet-widget__header">
+                                    <div class="wallet-widget__title">
+                                        <h2 data-i18n="wallet">Wallet</h2>
+                                        <span data-i18n="one_out_four" id="cardCounter">Cards | 1 out of 4</span>
+                                    </div>
+
+                                    <div class="wallet-widget__arrows">
+                                        <button id="previousCard" type="button" aria-label="Previous card">
+                                            <i class="bi bi-chevron-left"></i>
+                                        </button>
+                                        <button id="nextCard" type="button" aria-label="Next card">
+                                            <i class="bi bi-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="wallet-widget__body">
+                                    <article class="bank-card card-purple" id="bankCard">
+                                        <div class="card-inner">
+                                            <div class="card-face card-front">
+                                                <div class="bank-card__glow"></div>
+                                                <strong class="bank-card__type" id="cardType">VISA</strong>
+
+                                                <div class="bank-card__bottom">
+                                                    <small data-i18n="card_number">Card Number</small>
+                                                    <b id="cardNumber">5782 4160 8526 3149</b>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="card-face card-back">
+                                                <div class="magnetic-strip"></div>
+
+                                                <div class="cvv-row">
+                                                    <span>CVV</span>
+                                                    <strong id="cardCvv">123</strong>
+                                                </div>
+
+                                                <div class="card-details">
+                                                    <div>
+                                                        <small data-i18n="valid">Valid thru</small>
+                                                        <strong id="cardExpiry">07/30</strong>
+                                                    </div>
+
+                                                    <strong id="cardTypeBack">VISA</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+
+                                    <div class="wallet-widget__info" id="walletInfo">
+                                        <div>
+                                            <span data-i18n="balance">Balance</span>
+                                            <strong id="cardBalance">$14,528.00</strong>
+                                        </div>
+
+                                        <div>
+                                            <span data-i18n="currency">Currency</span>
+                                            <strong data-i18n="us_dollar" id="cardCurrency">US Dollar</strong>
+                                        </div>
+
+                                        <label class="deactivate-control">
+                                            <span data-i18n="deactivate_card">Deactivate card</span>
+                                            <input type="checkbox" id="deactivateCard" />
+                                            <i></i>
+                                        </label>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="statistics-widget">
+                                <div class="statistics-header">
+                                    <h2 data-i18n="statistics">Statistics</h2>
+
+                                    <div class="period-tabs" id="periodTabs">
+                                        <button data-i18n="one_d" type="button" data-period="1D">1D</button>
+                                        <button data-i18n="one_w" type="button" data-period="1W">1W</button>
+                                        <button data-i18n="one_m" type="button" data-period="1M" class="active">1M</button>
+                                        <button data-i18n="six_m" type="button" data-period="6M">6M</button>
+                                        <button data-i18n="one_y" type="button" data-period="1Y">1Y</button>
+                                    </div>
+                                </div>
+
+                                <div class="chart-wrap" id="statisticsChart"></div>
+
+                                <div class="chart-legend">
+                                    <span><i class="legend-income"></i> <span data-i18n="money_income" id="legendIncome">Money income</span></span>
+                                    <span><i class="legend-current"></i> <span data-i18n="current_state" id="legendCurrent">Current state</span></span>
+                                </div>
+                            </section>
+                        </div>
+
+                        <aside class="dashboard-side-column">
+                            <section class="transactions-widget">
+                                <div class="transactions-header">
+                                    <div>
+                                        <h2 data-i18n="transactions">Transactions <span data-i18n="upcoming_bills">| Upcoming bills</span></h2>
+                                    </div>
+
+                                    <button class="view-all-button" id="viewAllTransactions" type="button">
+                                        <div data-i18n="view_all">
+                                            View all
+                                        </div>
+                                    </button>
+                                </div>
+
+                                <div class="transaction-list">
+                                    <article class="transaction-item">
+                                        <div class="transaction-icon netflix">N</div>
+
+                                        <div class="transaction-details">
+                                            <strong>Netflix</strong>
+                                            <span data-i18n="apr">Apr 05, 2023 at 21:46</span>
+                                        </div>
+
+                                        <strong class="transaction-amount expense">-$15.49</strong>
+                                    </article>
+
+                                    <article class="transaction-item">
+                                        <div class="transaction-icon spotify">
+                                            <i class="bi bi-spotify"></i>
+                                        </div>
+
+                                        <div class="transaction-details">
+                                            <strong>Spotify</strong>
+                                            <span data-i18n="mar">Mar 14, 2023 at 08:10</span>
+                                        </div>
+
+                                        <strong class="transaction-amount income">+$135.65</strong>
+                                    </article>
+
+                                    <article class="transaction-item">
+                                        <div class="transaction-icon figma">
+                                            <i class="bi bi-palette-fill"></i>
+                                        </div>
+
+                                        <div class="transaction-details">
+                                            <strong>Figma</strong>
+                                            <span data-i18n="feb">Feb 20, 2023 at 19:24</span>
+                                        </div>
+
+                                        <strong class="transaction-amount expense">-$75.00</strong>
+                                    </article>
+
+                                    <article class="transaction-item">
+                                        <div class="transaction-icon shopify">
+                                            <i class="bi bi-bag-fill"></i>
+                                        </div>
+
+                                        <div class="transaction-details">
+                                            <strong>Shopify</strong>
+                                            <span data-i18n="jan">Jan 07, 2023 at 06:58</span>
+                                        </div>
+
+                                        <strong class="transaction-amount income">+$934.29</strong>
+                                    </article>
+                                </div>
+                            </section>
+
+
+                            <section class="savings-widget">
+                                <div class="savings-widget__header">
+                                    <h2 data-i18n="savings">Savings</h2>
+
+                                    <button class="view-all-button" id="viewAllSavings" type="button">
+                                        <div data-i18n="view_all">
+                                            View all
+                                        </div>
+                                    </button>
+                                </div>
+
+                                <div class="savings-total">
+                                    <strong>$64,792.30</strong>
+                                    <span>+12%</span>
+                                </div>
+
+                                <article class="saving-goal">
+                                    <div class="saving-goal__title">
+                                        <span class="saving-goal__icon">🏠</span>
+                                        <strong data-i18n="dream_house">Dream House</strong>
+                                    </div>
+
+                                    <div class="saving-progress">
+                                        <span class="saving-progress__bar dream-house" style="width: 67%"></span>
+                                    </div>
+
+                                    <div class="saving-goal__amounts">
+                                        <span>$52,720.20</span>
+                                        <span data-i18n="target_first">Target: <b>$80,500.00</b></span>
+                                    </div>
+                                </article>
+
+                                <article class="saving-goal">
+                                    <div class="saving-goal__title">
+                                        <span class="saving-goal__icon">🏕️</span>
+                                        <strong data-i18n="holiday">Holiday</strong>
+                                    </div>
+
+                                    <div class="saving-progress">
+                                        <span class="saving-progress__bar holiday" style="width: 60%"></span>
+                                    </div>
+
+                                    <div class="saving-goal__amounts">
+                                        <span>$12,072.10</span>
+                                        <span data-i18n="target_second">Target: <b>$20,000.00</b></span>
+                                    </div>
+                                </article>
+                            </section>
+                        </aside>
+                    </div>
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <section class="page" id="wallet">
+                    <div class="wallet-page-header">
+                        <h2 data-i18n="my_wallet">My Wallet 💳</h2>
+
+                        <button class="add-card-button" id="addCardButton" type="button">
+                            <i  class="bi bi-plus-lg"></i>
+                            <div data-i18n="add_card">
+                                     Add card
+                            </div>
+                       
+                        </button>
+                    </div>
+
+
+
+                    <div class="wallet-overview">
+                        <article class="wallet-overview-card">
+                            <div class="wallet-overview-card__top">
+                                <span data-i18n="total_bala">Total balance</span>
+
+                                <div class="currency-control">
+                                    <button type="button" class="currency-prev">
+                                        <i class="bi bi-chevron-left"></i>
+                                    </button>
+                                    <b class="selected-currency">USD</b>
+                                    <button type="button" class="currency-next">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="wallet-overview-icon">
+                                <i class="bi bi-wallet2"></i>
+                            </div>
+
+                            <strong id="walletTotalBalance">$0.00</strong>
+                            <p id="walletCardsCount">Across 0 cards</p>
+                        </article>
+
+
+                        <article class="wallet-overview-card">
+                            <div class="wallet-overview-card__top">
+                                <span data-i18n="available_f">Available funds</span>
+                            </div>
+
+                            <strong id="walletAvailableFunds">$0.00</strong>
+                            <p data-i18n="ready_to">Ready to spend</p>
+
+                            <div class="wallet-overview-icon">
+                                <i class="bi bi-currency-dollar"></i>
+                            </div>
+                        </article>
+
+
+                        <article class="wallet-overview-card">
+                            <div class="wallet-overview-card__top">
+                                <span data-i18n="this_month">This month</span>
+                            </div>
+
+                            <strong id="walletThisMonth">$0.00</strong>
+                            <p data-i18n="compared" id="walletMonthStatus">Compared with last month</p>
+
+                            <div class="wallet-overview-icon">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                        </article>
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="wallet-content-grid">
+                        <section class="wallet-widget" id="walletPageWidget">
+                            <div class="wallet-widget__header">
+                                <div class="wallet-widget__title">
+                                    <h2 data-i18n="wallet">Wallet</h2>
+                                    <span data-i18n="one_out_four" id="cardCounter">Cards | 1 out of 4</span>
+                                </div>
+
+                                <div class="wallet-widget__arrows">
+                                    <button id="previousCard" type="button" aria-label="Previous card">
+                                        <i class="bi bi-chevron-left"></i>
+                                    </button>
+                                    <button id="nextCard" type="button" aria-label="Next card">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="wallet-widget__body">
+                                <article class="bank-card card-purple" id="bankCard">
+                                    <div class="card-inner">
+                                        <div class="card-face card-front">
+                                            <div class="bank-card__glow"></div>
+                                            <strong class="bank-card__type" id="cardType">VISA</strong>
+
+                                            <div class="bank-card__bottom">
+                                                <small data-i18n="card_number">Card Number</small>
+                                                <b id="cardNumber">5782 4160 8526 3149</b>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card-face card-back">
+                                            <div class="magnetic-strip"></div>
+
+                                            <div class="cvv-row">
+                                                <span>CVV</span>
+                                                <strong id="cardCvv">123</strong>
+                                            </div>
+
+                                            <div class="card-details">
+                                                <div>
+                                                    <small data-i18n="valid">Valid thru</small>
+                                                    <strong id="cardExpiry">07/30</strong>
+                                                </div>
+
+                                                <strong id="cardTypeBack">VISA</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <div class="wallet-widget__info" id="walletInfo">
+                                    <div>
+                                        <span data-i18n="balance">Balance</span>
+                                        <strong id="cardBalance">$14,528.00</strong>
+                                    </div>
+
+                                    <div>
+                                        <span data-i18n="currency">Currency</span>
+                                        <strong data-i18n="us_dollar" id="cardCurrency">US Dollar</strong>
+                                    </div>
+
+                                    <label class="deactivate-control">
+                                        <span data-i18n="deactivate_card">Deactivate card</span>
+                                        <input type="checkbox" id="deactivateCard" />
+                                        <i></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </section>
+
+
+
+
+
+
+                        <section class="quick-actions">
+                            <h2 data-i18n="quick_action">Quick actions</h2>
+
+                            <button class="quick-action" id="transferAction" type="button">
+                                <span class="quick-action__icon">
+                                    <i class="bi bi-arrow-left-right"></i>
+                                </span>
+
+                                <span class="quick-action__text">
+                                    <strong data-i18n="transfer">Transfer</strong>
+                                    <small data-i18n="send_money">Send money to anyone</small>
+                                </span>
+
+                                <i class="bi bi-chevron-right quick-action__arrow"></i>
+                            </button>
+
+                            <button class="quick-action" id="topUpAction" type="button">
+                                <span class="quick-action__icon">
+                                    <i class="bi bi-plus-lg"></i>
+                                </span>
+
+                                <span class="quick-action__text">
+                                    <strong data-i18n="top_up">Top up</strong>
+                                    <small data-i18n="add_money">Add money to your wallet</small>
+                                </span>
+
+                                <i class="bi bi-chevron-right quick-action__arrow"></i>
+                            </button>
+
+                            <button class="quick-action" type="button">
+                                <span class="quick-action__icon">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                </span>
+
+                                <span class="quick-action__text">
+                                    <strong data-i18n="pay_bill">Pay bill</strong>
+                                    <small data-i18n="pay_your">Pay your bills easily</small>
+                                </span>
+
+                                <i class="bi bi-chevron-right quick-action__arrow"></i>
+                            </button>
+                        </section>
+                    </div>
+
+                    <!-- Нижній ряд: на всю ширину сторінки -->
+                    <div class="wallet-bottom-grid">
+                        <section class="spending-widget">
+                            <div class="spending-widget__header">
+                                <h2 data-i18n="spending_by">Spending by category</h2>
+                            </div>
+
+                            <div class="spending-category">
+                                <div class="spending-category__icon">
+                                    <i class="bi bi-cup-hot"></i>
+                                </div>
+                                <strong data-i18n="food">Food</strong>
+
+                                <div class="spending-category__bar">
+                                    <span style="width: 100%"></span>
+                                </div>
+
+                                <b>$1,245</b>
+                                <small>32%</small>
+                            </div>
+
+                            <div class="spending-category">
+                                <div class="spending-category__icon">
+                                    <i class="bi bi-car-front"></i>
+                                </div>
+                                <strong data-i18n="transport">Transport</strong>
+
+                                <div class="spending-category__bar">
+                                    <span style="width: 71%"></span>
+                                </div>
+
+                                <b>$845</b>
+                                <small>22%</small>
+                            </div>
+
+                            <div class="spending-category">
+                                <div class="spending-category__icon">
+                                    <i class="bi bi-bag"></i>
+                                </div>
+                                <strong data-i18n="shopping">Shopping</strong>
+
+                                <div class="spending-category__bar">
+                                    <span style="width: 58%"></span>
+                                </div>
+
+                                <b>$720</b>
+                                <small>18%</small>
+                            </div>
+
+
+                            <button data-i18n="view_all_a" class="view-analytics-button" type="button">
+                                View all analytics
+                            </button>
+                        </section>
+
+
+
+                        <section class="upcoming-payments">
+                            <div class="upcoming-payments__header">
+                                <h2 data-i18n="upcoming">Upcoming payments</h2>
+
+                                <button class="calendar-button" id="viewCalendarButton" type="button">
+                                    <i class="bi bi-calendar3"></i>
+                                    <div data-i18n="view_calendar">
+                                         View calendar
+                                    </div>
+                                   
+                                </button>
+                            </div>
+
+                            <article class="upcoming-payment">
+                                <div class="payment-logo netflix">N</div>
+
+                                <div class="payment-info">
+                                    <strong>Netflix</strong>
+                                    <span data-i18n="sep_drei">Sep 03</span>
+                                </div>
+
+                                <b>$15.49</b>
+                            </article>
+
+                            <article class="upcoming-payment">
+                                <div class="payment-logo spotify">
+                                    <i class="bi bi-spotify"></i>
+                                </div>
+
+                                <div class="payment-info">
+                                    <strong>Spotify</strong>
+                                    <span data-i18n="sep_vier">Sep 14</span>
+                                </div>
+
+                                <b>$10.99</b>
+                            </article>
+
+                            <article class="upcoming-payment">
+                                <div class="payment-logo adobe">
+                                    <i class="bi bi-bezier2"></i>
+                                </div>
+
+                                <div class="payment-info">
+                                    <strong>Adobe Creative Cloud</strong>
+                                    <span data-i18n="sep_eight">Sep 18</span>
+                                </div>
+
+                                <b>$54.99</b>
+                            </article>
+
+                            <article class="upcoming-payment">
+                                <div class="payment-logo electricity">
+                                    <i class="bi bi-lightning-charge-fill"></i>
+                                </div>
+
+                                <div class="payment-info">
+                                    <strong data-i18n="electricity">Electricity bill</strong>
+                                    <span data-i18n="sep_twenty">Sep 25</span>
+                                </div>
+
+                                <b>$86.40</b>
+                            </article>
+                        </section>
+                    </div>
+
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <section class="page" id="analytics">
+                    <h2>Analytics</h2>
+                    <p>Статистика доходів, витрат і фінансової активності.</p>
+                </section>
+
+                <section class="page" id="archive">
+                    <h2>Archive</h2>
+                    <p>Архівовані платежі та документи.</p>
+                </section>
+
+                <section class="page" id="reporting">
+                    <h2>Reporting</h2>
+                    <p>Фінансові звіти за вибраний період.</p>
+                </section>
+
+                <section class="page" id="ai-insights">
+                    <h2>AI Insights</h2>
+                    <p>Персональні фінансові рекомендації.</p>
+                </section>
+
+                <section class="page" id="savings">
+                    <h2>Savings Planner</h2>
+                    <p>Плануйте накопичення та фінансові цілі.</p>
+                </section>
+
+                <section class="page" id="tracker">
+                    <h2>Monthly Tracker</h2>
+                    <p>Щомісячний контроль ваших витрат.</p>
+                </section>
+
+                <section class="page" id="help">
+                    <h2>Help Center</h2>
+                    <p>Відповіді на поширені запитання.</p>
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <section class="page" id="settings">
+                    <div class="account-settings">
+                        <div class="account-settings__header">
+                            <h2 data-i18n="settingsTitle">Account settings</h2>
+                            <p data-i18n="settingsDescription">Manage your profile, security and preferences.</p>
+                        </div>
+
+                        <div class="settings-top-grid">
+
+
+                            <section class="profile-card">
+                                <h2 data-i18n="profile">Profile</h2>
+
+                                <div class="profile-card__main">
+                                    <img class="profile-avatarr" id="profileAvatar" src="img/Andrian.jpeg" alt="">
+
+                                    <div class="profile-card__identity">
+                                        <strong>Konovart Andrian</strong>
+                                        <span>andrakonovart@gmail.com</span>
+                                    </div>
+
+                                    <button data-i18n="change_photo" class="profile-change-photo" id="changeProfilePhoto" type="button">
+                                        Change photo
+                                    </button>
+
+                                    <input id="profilePhotoInput" type="file" accept="image/*" hidden />
+                                </div>
+
+                                <div class="profile-card__details">
+                                    <div class="profile-detail">
+                                        <span data-i18n="f_name">Full name</span>
+                                        <strong>Konovart Andrian</strong>
+                                    </div>
+
+                                    <div class="profile-detail">
+                                        <span data-i18n="email">Email address</span>
+                                        <strong>andrakonovart@gmail.com</strong>
+                                    </div>
+
+                                    <div class="profile-detail">
+                                        <span data-i18n="phone">Phone number</span>
+                                        <strong>+48 794 057 507</strong>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="security-card">
+                                <div class="security-card__heading">
+                                    <span class="security-icon">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                                            <path
+                                                d="M12 2 4.5 5v6.2c0 5 3.2 9.5 7.5 10.8 4.3-1.3 7.5-5.8 7.5-10.8V5L12 2Z">
+                                            </path>
+                                            <path d="m8.3 12 2.2 2.2 5.1-5.1"></path>
+                                        </svg>
+                                    </span>
+
+                                    <h2 data-i18n="security">Security</h2>
+                                </div>
+
+                                <div class="security-row">
+                                    <span data-i18n="two_factor">Two-factor authentication</span>
+
+                                    <div class="security-row__action">
+                                        <span data-i18n="enabled" class="security-status">Enabled</span>
+                                        <button data-i18n="manage" type="button">Manage</button>
+                                    </div>
+                                </div>
+
+                                <div class="security-row">
+                                    <span data-i18n="change">Change password</span>
+
+                                    <button data-i18n="update" type="button">Update</button>
+                                </div>
+
+                                <div class="security-row">
+                                    <span><div data-i18n="active_s">Active sessions</div>
+                                        
+                                        <small data-i18n="device">2 devices</small>
+                                    </span>
+
+                                    <button data-i18n="view" type="button">View</button>
+                                </div>
+                            </section>
+                        </div>
+
+
+                        <div class="settings-bottom-grid">
+                            <section class="preferences-card">
+                                <h2 data-i18n="preferences">Preferences</h2>
+
+                                <div class="preferences-row">
+                                    <span data-i18n="currency">Currency</span>
+
+                                    <select id="preferredCurrency">
+                                        <option value="USD">USD</option>
+                                        <option value="EUR">EUR</option>
+                                        <option value="UAH">UAH</option>
+                                        <option value="GBP">GBP</option>
+                                    </select>
+                                </div>
+
+                                <div class="preferences-row">
+                                    <span data-i18n="language">Language</span>
+
+                                    <select id="preferredLanguage">
+                                        <option value="English">English</option>
+                                        <option value="Українська">Українська</option>
+                                        <option value="Deutsch">Deutsch</option>
+                                    </select>
+                                </div>
+
+                                <div class="preferences-row preferences-row--dark">
+                                    <span><div data-i18n="dark">Dark mode</div>
+                                        
+                                        <small data-i18n="use_system">Use system setting</small>
+                                    </span>
+
+                                    <label class="preferences-switch">
+                                        <input id="darkModeToggle" type="checkbox" />
+                                        <i></i>
+                                    </label>
+                                </div>
+                            </section>
+
+                            <section class="notifications-card">
+                                <h2 data-i18n="notification">Notifications</h2>
+
+                                <div class="notification-row">
+                                    <span data-i18n="payment_up">Payment updates</span>
+
+                                    <label class="preferences-switch">
+                                        <input id="paymentUpdatesToggle" type="checkbox" checked />
+                                        <i></i>
+                                    </label>
+                                </div>
+
+                                <div class="notification-row">
+                                    <span data-i18n="bill_re">Bill reminders</span>
+
+                                    <label class="preferences-switch">
+                                        <input id="billRemindersToggle" type="checkbox" checked />
+                                        <i></i>
+                                    </label>
+                                </div>
+
+                                <div class="notification-row">
+                                    <span data-i18n="monthly">Monthly summary</span>
+
+                                    <label class="preferences-switch">
+                                        <input id="monthlySummaryToggle" type="checkbox" checked />
+                                        <i></i>
+                                    </label>
+                                </div>
+                            </section>
+                        </div>
+                        <section class="settings-actions">
+                            <button data-i18n="save_cha" class="save-settings-button" id="saveSettingsButton" type="button">
+                                Save changes
+                            </button>
+
+                            <button data-i18n="delete_acc" class="delete-account-button" id="deleteAccountButton" type="button">
+                                Delete account
+                            </button>
+                        </section>
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                </section>
+            </main>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="confirm-modal" id="deactivateModal" aria-hidden="true">
+            <div class="confirm-modal__box">
+                <h3 data-i18n="deactivate_card">Deactivate card?</h3>
+                <p data-i18n="are_you">
+                    Are you sure you want to deactivate this card? You will not be able to
+                    use it for payments until it is activated again.
+                </p>
+
+                <div class="confirm-modal__actions">
+                    <button data-i18n="cancel" class="modal-cancel" id="cancelDeactivate" type="button">
+                        Cancel
+                    </button>
+                    <button data-i18n="yes_dia" class="modal-confirm" id="confirmDeactivate" type="button">
+                        Yes, deactivate
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="confirm-modal pin-modal" id="pinModal">
+            <div class="confirm-modal__box">
+                <h3 data-i18n="enter_pin">Enter card PIN</h3>
+                <p data-i18n="enter_your">Enter your 4-digit PIN to view card details.</p>
+
+                <input class="pin-input" id="pinInput" type="password" inputmode="numeric" maxlength="4"
+                    placeholder="• • • •" aria-label="Card PIN" />
+
+                <p class="pin-error" id="pinError"></p>
+
+                <div class="confirm-modal__actions">
+                    <button data-i18n="cancel" class="modal-cancel" id="cancelPin" type="button">
+                        Cancel
+                    </button>
+                    <button data-i18n="continue" class="modal-confirm" id="confirmPin" type="button">
+                        Continue
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="transactions-modal" id="transactionsModal" aria-hidden="true">
+            <div class="transactions-modal__box" role="dialog" aria-modal="true">
+                <div class="transactions-modal__header">
+                    <div>
+                        <h2 data-i18n="all_trans">All transactions</h2>
+                        <p data-i18n="trans_history">Transaction history</p>
+                    </div>
+
+                    <button class="transactions-modal__close" id="closeTransactionsModal" type="button"
+                        aria-label="Close">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+
+                <div class="transactions-modal__list">
+                    <article class="transaction-item">
+                        <div class="transaction-icon netflix">N</div>
+                        <div class="transaction-details">
+                            <strong>Netflix</strong>
+                            <span data-i18n="apr">Apr 05, 2023 at 21:46</span>
+                        </div>
+                        <strong class="transaction-amount expense">-$15.49</strong>
+                    </article>
+
+                    <article class="transaction-item">
+                        <div class="transaction-icon spotify"><i class="bi bi-spotify"></i></div>
+                        <div class="transaction-details">
+                            <strong>Spotify</strong>
+                            <span data-i18n="mar">Mar 14, 2023 at 08:10</span>
+                        </div>
+                        <strong class="transaction-amount income">+$135.65</strong>
+                    </article>
+
+                    <article class="transaction-item">
+                        <div class="transaction-icon figma"><i class="bi bi-palette-fill"></i></div>
+                        <div class="transaction-details">
+                            <strong>Figma</strong>
+                            <span data-i18n="feb">Feb 20, 2023 at 19:24</span>
+                        </div>
+                        <strong class="transaction-amount expense">-$75.00</strong>
+                    </article>
+
+                    <article class="transaction-item">
+                        <div class="transaction-icon figma"><i class="bi bi-palette-fill"></i></div>
+                        <div class="transaction-details">
+                            <strong>Figma</strong>
+                            <span data-i18n="feb">Feb 20, 2023 at 19:24</span>
+                        </div>
+                        <strong class="transaction-amount expense">-$75.00</strong>
+                    </article>
+
+                    <article class="transaction-item">
+                        <div class="transaction-icon figma"><i class="bi bi-palette-fill"></i></div>
+                        <div class="transaction-details">
+                            <strong>Adobe Creative Cloud</strong>
+                            <span data-i18n="dec">Dec 28, 2022 at 14:20</span>
+                        </div>
+                        <strong class="transaction-amount expense">-$19.99</strong>
+                    </article>
+
+                    <article class="transaction-item">
+                        <div class="transaction-icon spotify"><i class="bi bi-arrow-down-left"></i></div>
+                        <div class="transaction-details">
+                            <strong>Salary payment</strong>
+                            <span data-i18n="dec">Dec 25, 2022 at 09:00</span>
+                        </div>
+                        <strong class="transaction-amount income">+$2,600.00</strong>
+                    </article>
+
+                    <article class="transaction-item">
+                        <div class="transaction-icon shopify"><i class="bi bi-bag-fill"></i></div>
+                        <div class="transaction-details">
+                            <strong>Shopify</strong>
+                            <span data-i18n="jan">Jan 07, 2023 at 06:58</span>
+                        </div>
+                        <strong class="transaction-amount income">+$934.29</strong>
+                    </article>
+
+                    <article class="transaction-item">
+                        <div class="transaction-icon netflix">N</div>
+                        <div class="transaction-details">
+                            <strong>Netflix</strong>
+                            <span data-i18n="apr">Apr 05, 2023 at 21:46</span>
+                        </div>
+                        <strong class="transaction-amount expense">-$15.49</strong>
+                    </article>
+
+                    <article class="transaction-item">
+                        <div class="transaction-icon figma"><i class="bi bi-palette-fill"></i></div>
+                        <div class="transaction-details">
+                            <strong>Figma</strong>
+                            <span data-i18n="feb">Feb 20, 2023 at 19:24</span>
+                        </div>
+                        <strong class="transaction-amount expense">-$75.00</strong>
+                    </article>
+
+                    <article class="transaction-item">
+                        <div class="transaction-icon figma"><i class="bi bi-palette-fill"></i></div>
+                        <div class="transaction-details">
+                            <strong>Figma</strong>
+                            <span data-i18n="feb">Feb 20, 2023 at 19:24</span>
+                        </div>
+                        <strong class="transaction-amount expense">-$75.00</strong>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="add-card-modal" id="addCardModal">
+            <form class="add-card-modal__box" id="addCardForm">
+                <div class="add-card-modal__header">
+                    <div>
+                        <h2 data-i18n="add_new_c">Add new card</h2>
+                        <p data-i18n="choose">Choose how you want to add a card.</p>
+                    </div>
+
+                    <button class="add-card-close" id="closeAddCardModal" type="button">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+
+                <div class="add-methods">
+                    <button class="add-method active" data-method="link" type="button">
+                        <span class="add-method__icon"><i class="bi bi-credit-card-2-front"></i></span>
+                        <strong data-i18n="link_exi">Link existing card</strong>
+                        <small data-i18n="connect">Connect a card from your bank</small>
+                        <i class="bi bi-check-circle-fill add-method__check"></i>
+                    </button>
+
+                    <button class="add-method" data-method="virtual" type="button">
+                        <span class="add-method__icon"><i class="bi bi-stars"></i></span>
+                        <strong data-i18n="virtual_card">Create virtual card</strong>
+                        <small data-i18n="online_pay">For online payments</small>
+                        <i class="bi bi-check-circle-fill add-method__check"></i>
+                    </button>
+                </div>
+
+                <div class="add-card-divider"></div>
+
+                <label class="add-card-field">
+                    <span data-i18n="card_type">Card type</span>
+                    <select id="newCardType">
+                        <option data-i18n="debit">Debit card</option>
+                        <option data-i18n="credit">Credit card</option>
+                        <option data-i18n="virtual">Virtual card</option>
+                    </select>
+                </label>
+
+                <label class="add-card-field">
+                    <span data-i18n="card_name">Card name</span>
+                    <input id="newCardName" type="text" placeholder="e.g. Daily expenses" required />
+                </label>
+
+                <div class="add-card-bottom-fields">
+                    <label class="add-card-field">
+                        <span data-i18n="currency">Currency</span>
+                        <select id="newCardCurrency">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="UAH">UAH</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </label>
+
+                    <div class="add-card-field">
+                        <span data-i18n="card_ne">Card network</span>
+
+                        <div class="network-options">
+                            <button class="network-option active" data-network="VISA" type="button">
+                                <strong>VISA</strong>
+                                <i class="bi bi-check-circle-fill"></i>
+                            </button>
+
+                            <button class="network-option mastercard-option" data-network="Mastercard" type="button">
+                                <span class="mastercard-logo"><i></i><i></i></span>
+                                <strong>Mastercard</strong>
+                                <i class="bi bi-check-circle-fill"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-card-actions">
+                    <button data-i18n="cancel" class="add-card-cancel" id="cancelAddCard" type="button">
+                        Cancel
+                    </button>
+
+                    <button data-i18n="continue" class="add-card-submit" type="submit">
+                        Continue
+                    </button>
+                </div>
+            </form>
+        </div>
+
+
+
+
+
+
+        <div class="payment-calendar-modal" id="paymentCalendarModal">
+            <div class="payment-calendar-modal__box">
+                <div class="payment-calendar-modal__header">
+                    <h2 data-i18n="payment_cale">Payment calendar</h2>
+
+                    <div class="payment-calendar-modal__controls">
+                        <button id="calendarPreviousMonth" type="button">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+
+                        <strong id="calendarMonthTitle"></strong>
+
+                        <button id="calendarNextMonth" type="button">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+
+                        <button class="payment-calendar-modal__close" id="closeCalendarModal" type="button">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="calendar-legend">
+                    <span><i class="scheduled-dot"></i> <div data-i18n="scheduled">Scheduled payment</div></span>
+                    <span><i class="overdue-dot"></i> <div data-i18n="overdue">Overdue</div></span>
+                </div>
+
+                <div class="payment-calendar-layout">
+                    <div>
+                        <div class="calendar-weekdays">
+                            <span data-i18n="mon">Mon</span>
+                            <span data-i18n="tue">Tue</span>
+                            <span data-i18n="wed">Wed</span>
+                            <span data-i18n="thu">Thu</span>
+                            <span data-i18n="fri">Fri</span>
+                            <span data-i18n="sat">Sat</span>
+                            <span data-i18n="sun">Sun</span>
+                        </div>
+
+                        <div class="payment-calendar-grid" id="paymentCalendarGrid"></div>
+                    </div>
+
+                    <aside class="calendar-details" id="calendarDetails"></aside>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="transfer-modal" id="transferModal">
+            <div class="transfer-modal__dialog" role="dialog" aria-modal="true">
+                <button class="transfer-modal__close" id="closeTransferModal" type="button">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+
+                <h2 data-i18n="transfer_mo">Transfer money</h2>
+                <p data-i18n="send" class="transfer-modal__subtitle">Send money securely in a few steps.</p>
+
+                <form id="transferForm">
+                    <label class="transfer-field">
+                        <span data-i18n="recipient">Recipient</span>
+                        <div class="transfer-search">
+                            <i class="bi bi-search"></i>
+                            <input id="transferRecipient" type="text" placeholder="Name, phone, or account number" />
+                        </div>
+                    </label>
+
+                    <div class="transfer-recent-header">
+                        <span data-i18n="recent_reci">Recent recipients</span>
+                        <button data-i18n="all_cont" type="button">All contacts</button>
+                    </div>
+
+                    <div class="transfer-recipients">
+                        <button class="transfer-recipient" data-recipient="Kostiantyn Shcherbachenko" type="button">
+                            <img class="recipient-avatar" src="img/Kostia.jpg" alt="">
+                            <span>Kostia S.</span>
+                        </button>
+
+                        <button class="transfer-recipient" data-recipient="Arsen Haliy" type="button">
+                            <img class="recipient-avatar" src="img/Arsen.JPG" alt="">
+                            <span>Arsen H.</span>
+                        </button>
+
+                        <button class="transfer-recipient" data-recipient="Nazarii Lyven" type="button">
+                            <img class="recipient-avatar" src="img/Nazik.JPG" alt="">
+                            <span>Nazarii L.</span>
+                        </button>
+                    </div>
+
+                    <label class="transfer-field transfer-field--border">
+                        <span data-i18n="amount">Amount</span>
+                        <div class="transfer-amount">
+                            <span id="transferCurrencySymbol">$</span>
+                            <input id="transferAmount" type="number" min="1" step="1" placeholder="0.00" />
+                            <select id="transferCurrency">
+                                <option>USD</option>
+                                <option>EUR</option>
+                                <option>UAH</option>
+                                <option>GBP</option>
+                            </select>
+                        </div>
+                    </label>
+
+                    <label class="transfer-field">
+                        <span data-i18n="from">From</span>
+                        <div class="topup-card-select" id="transferCardSelect">
+                            <button class="topup-card-picker" id="transferCardPicker" type="button"
+                                aria-expanded="false">
+                                <span class="topup-card-picker__logo" id="transferCardLogo">VISA</span>
+
+                                <span class="topup-card-picker__text">
+                                    <strong id="transferCardName">Visa **** 3149</strong>
+                                    <small data-i18n="avai_vier" id="transferCardBalance">Available $14,528.00 </small>
+                                </span>
+
+                                <i class="bi bi-chevron-down" id="transferCardChevron"></i>
+                            </button>
+
+                            <div class="topup-card-menu">
+                                <button class="transfer-card-option active" type="button" data-brand="visa"
+                                    data-name="Visa **** 3149" data-balance="Available $14,528.00">
+                                    <span class="topup-card-picker__logo">VISA</span>
+                                    <span>
+                                        <strong>Visa **** 3149</strong>
+                                        <small data-i18n="avai_vier">Available $14,528.00</small>
+                                    </span>
+                                </button>
+
+                                <button class="transfer-card-option" type="button" data-brand="mastercard"
+                                    data-name="Mastercard **** 7738" data-balance="Available €8,340.50">
+                                    <span class="topup-card-picker__logo topup-card-picker__logo--mastercard"></span>
+                                    <span>
+                                        <strong>Mastercard **** 7738</strong>
+                                        <small data-i18n="avai_acht">Available €8,340.50</small>
+                                    </span>
+                                </button>
+
+                                <button class="transfer-card-option" type="button" data-brand="visa"
+                                    data-name="Visa **** 1780" data-balance="Available ₴125,780.00">
+                                    <span class="topup-card-picker__logo">VISA</span>
+                                    <span>
+                                        <strong>Visa **** 1780</strong>
+                                        <small data-i18n="avai_hunder">Available ₴125,780.00 </small>
+                                    </span>
+                                </button>
+
+                                <button class="transfer-card-option" type="button" data-brand="mastercard"
+                                    data-name="Mastercard **** 2104" data-balance="Available £2,940.00">
+                                    <span class="topup-card-picker__logo topup-card-picker__logo--mastercard"></span>
+                                    <span>
+                                        <strong>Mastercard **** 2104</strong>
+                                        <small data-i18n="avai_zwei">Available £2,940.00</small>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </label>
+
+                    <label class="transfer-field">
+                        <span data-i18n="note">Note</span>
+                        <input id="transferNote" type="text" placeholder="What's this for?" />
+                    </label>
+
+                    <p data-i18n="no_trans" class="transfer-fee">No transfer fee</p>
+
+                    <div class="transfer-modal__buttons">
+                        <button data-i18n="cancel" class="transfer-cancel" id="cancelTransfer" type="button">Cancel</button>
+                        <button data-i18n="review" class="transfer-submit" type="submit">Review transfer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="topup-modal" id="topUpModal">
+            <div class="topup-dialog" role="dialog" aria-modal="true">
+                <button class="topup-close" id="closeTopUpModal" type="button">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+
+                <h2 data-i18n="top_up_ba">Top up balance</h2>
+                <p data-i18n="add_money_to">Add money to your wallet instantly.</p>
+
+                <form id="topUpForm">
+                    <label class="topup-label">
+                        <span data-i18n="add_mo">Add money to</span>
+
+                        <div class="topup-card-select" id="topUpCardSelect">
+                            <button class="topup-card-picker" id="topUpCardPicker" type="button" aria-expanded="false">
+                                <span class="topup-card-picker__logo" id="topUpCardLogo">VISA</span>
+
+                                <span class="topup-card-picker__text">
+                                    <strong id="topUpCardName">Visa **** 3149</strong>
+                                    <small data-i18n="cu_ba_vier" id="topUpCardBalance">$14,528.00 current balance</small>
+                                </span>
+
+                                <i class="bi bi-chevron-down" id="topUpCardChevron"></i>
+                            </button>
+
+                            <div class="topup-card-menu" id="topUpCardMenu">
+                                <button class="topup-card-option active" type="button" data-brand="VISA"
+                                    data-name="Visa **** 3149" data-balance="$14,528.00 current balance">
+                                    <span class="topup-card-picker__logo">VISA</span>
+                                    <span>
+                                        <strong>Visa **** 3149</strong>
+                                        <small data-i18n="cu_ba_vier">$14,528.00 current balance</small>
+                                    </span>
+                                </button>
+
+                                <button class="topup-card-option" type="button" data-brand="MC"
+                                    data-name="Mastercard **** 7738" data-balance="€8,340.50 current balance">
+                                    <span class="topup-card-picker__logo topup-card-picker__logo--mastercard">MC</span>
+                                    <span>
+                                        <strong>Mastercard **** 7738</strong>
+                                        <small data-i18n="cu_ba_acht">€8,340.50 current balance</small>
+                                    </span>
+                                </button>
+
+                                <button class="topup-card-option" type="button" data-brand="VISA"
+                                    data-name="Visa **** 1780" data-balance="₴125,780.00 current balance">
+                                    <span class="topup-card-picker__logo">VISA</span>
+                                    <span>
+                                        <strong>Visa **** 1780</strong>
+                                        <small data-i18n="cu_ba_hundert">₴125,780.00 current balance</small>
+                                    </span>
+                                </button>
+
+                                <button class="topup-card-option" type="button" data-brand="MC"
+                                    data-name="Mastercard **** 2104" data-balance="£2,940.00 current balance">
+                                    <span class="topup-card-picker__logo topup-card-picker__logo--mastercard">MC</span>
+                                    <span>
+                                        <strong>Mastercard **** 2104</strong>
+                                        <small data-i18n="cu_ba_zwei">£2,940.00 current balance</small>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </label>
+
+                    <label class="topup-label topup-amount-label">
+                        <span data-i18n="amount">Amount</span>
+                        <div class="topup-amount">
+                            <strong id="topUpCurrencySymbol">$</strong>
+                            <input id="topUpAmount" type="number" min="1" step="1" value="100" />
+                            <select id="topUpCurrency">
+                                <option value="USD">USD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="UAH">UAH</option>
+                                <option value="GBP">GBP</option>
+                            </select>
+                        </div>
+                    </label>
+
+                    <div class="topup-presets">
+                        <button data-amount="50" type="button">$50</button>
+                        <button class="active" data-amount="100" type="button">$100</button>
+                        <button data-amount="500" type="button">$500</button>
+                        <button data-i18n="custom" data-amount="" type="button">Custom</button>
+                    </div>
+
+                    <div class="topup-card-select" id="paymentMethodSelect">
+                        <span data-i18n="payment_method" class="my">Payment method</span>
+                        <button class="topup-card-picker" id="paymentMethodPicker" type="button" aria-expanded="false">
+                            <span class="topup-card-picker__logo topup-card-picker__logo--mastercard"
+                                id="paymentMethodLogo"></span>
+
+                            <span class="topup-card-picker__text">
+                                <strong id="paymentMethodName">Mastercard **** 7738</strong>
+                                <small data-i18n="ava_bal_acht" id="paymentMethodBalance">Available balance: €8,340.50</small>
+                            </span>
+
+                            <i class="bi bi-chevron-down" id="paymentMethodChevron"></i>
+                        </button>
+
+                        <div class="topup-card-menu" id="paymentMethodMenu">
+                            <button class="payment-method-option active" type="button" data-brand="mastercard"
+                                data-name="Mastercard **** 7738" data-balance="Available balance: €8,340.50">
+                                <span class="topup-card-picker__logo topup-card-picker__logo--mastercard"></span>
+                                <span>
+                                    <strong>Mastercard **** 7738</strong>
+                                    <small data-i18n="ava_bal_acht">Available balance: €8,340.50</small>
+                                </span>
+                            </button>
+
+                            <button class="payment-method-option" type="button" data-brand="visa"
+                                data-name="Visa **** 3149" data-balance="Available balance: $14,528.00">
+                                <span class="topup-card-picker__logo">VISA</span>
+                                <span>
+                                    <strong>Visa **** 3149</strong>
+                                    <small data-i18n="ava_bal_vier">Available balance: $14,528.00</small>
+                                </span>
+                            </button>
+
+                            <button class="payment-method-option" type="button" data-brand="mastercard"
+                                data-name="Mastercard **** 2104" data-balance="Available balance: £2,940.00">
+                                <span class="topup-card-picker__logo topup-card-picker__logo--mastercard"></span>
+                                <span>
+                                    <strong>Mastercard **** 2104</strong>
+                                    <small data-i18n="ava_bal_zwei">Available balance: £2,940.00</small>
+                                </span>
+                            </button>
+
+                            <button class="payment-method-option" type="button" data-brand="visa"
+                                data-name="Visa **** 1780" data-balance="Available balance: ₴125,780.00">
+                                <span class="topup-card-picker__logo">VISA</span>
+                                <span>
+                                    <strong>Visa **** 1780</strong>
+                                    <small data-i18n="ava_bal_hundert">Available balance: ₴125,780.00</small>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="topup-info">
+                        <span class="topup-info__icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2 4.5 5v6.2c0 5 3.2 9.5 7.5 10.8 4.3-1.3 7.5-5.8 7.5-10.8V5L12 2Z"></path>
+                                <path class="topup-info__check" d="m8.2 12.1 2.3 2.3 5.2-5.2"></path>
+                            </svg>
+                        </span>
+
+                        <span data-i18n="no_fees">No fees · Funds available immediately</span>
+                    </div>
+
+                    <div class="topup-buttons">
+                        <button data-i18n="cancel" id="cancelTopUp" class="topup-cancel" type="button">Cancel</button>
+                        <button class="topup-submit" type="submit"> <div data-i18n="top_up_b">
+                            Top up
+                        </div>
+                             <span id="topUpButtonAmount">$100</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="delete-modal" id="deleteAccountModal" aria-hidden="true">
+            <div class="delete-modal__box" role="dialog" aria-modal="true">
+                <button class="delete-modal__close" id="closeDeleteModal" type="button">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+
+                <div class="delete-modal__icon">
+                    <i class="bi bi-exclamation-triangle"></i>
+                </div>
+
+                <h2 data-i18n="delete_acco">Delete account?</h2>
+                <p data-i18n="are_you_sure">
+                    Are you sure you want to delete your account? This action cannot be undone.
+                </p>
+
+                <div class="delete-modal__actions">
+                    <button data-i18n="cancel" class="delete-modal__cancel" id="cancelDeleteAccount" type="button">
+                        Cancel
+                    </button>
+
+                    <button data-i18n="yes_de" class="delete-modal__confirm" id="confirmDeleteAccount" type="button">
+                        Yes, delete account
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <script src="js/translations.js" defer></script>
+        <script src="js/script.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
