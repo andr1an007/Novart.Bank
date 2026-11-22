@@ -1,0 +1,323 @@
+html.dark-mode {
+    color-scheme: dark;
+}
+
+html.dark-mode body,
+html.dark-mode .app,
+html.dark-mode .main-content,
+html.dark-mode .main-area,
+html.dark-mode .page,
+html.dark-mode .pages-wrapper,
+html.dark-mode .mobile-menu-toggle {
+    background: #11131b;
+    color: white;
+}
+
+html.dark-mode .nav-item.active,
+html.dark-mode .nav-item:hover {
+    background: #2b2548;
+}
+
+html.dark-mode input,
+html.dark-mode select,
+html.dark-mode .topbar-icon,
+html.dark-mode .header-account__button,
+html.dark-mode .transactions-modal__close,
+html.dark-mode .deactivate-control i,
+html.dark-mode .wallet-widget.is-deactivated .deactivate-control i,
+html.dark-mode .period-tabs,
+html.dark-mode .currency-control {
+    background: #202431;
+    border-color: #373d50;
+    color: white;
+}
+
+html.dark-mode .profile-detail,
+html.dark-mode .security-row,
+html.dark-mode .preferences-row,
+html.dark-mode .notification-row,
+html.dark-mode .profile-card__main,
+html.dark-mode .transaction-item,
+html.dark-mode .transaction-icon,
+html.dark-mode .wallet-widget__info,
+html.dark-mode .transaction-item,
+html.dark-mode .saving-goal,
+html.dark-mode .upcoming-payment,
+html.dark-mode .transfer-recipients,
+html.dark-mode .topup-amount-label,
+html.dark-mode .payment-calendar-grid,
+html.dark-mode .calendar-day {
+    border-color: #2d3140;
+}
+
+
+html.dark-mode .sidebar,
+html.dark-mode .topbar,
+html.dark-mode .profile-card,
+html.dark-mode .security-card,
+html.dark-mode .preferences-card,
+html.dark-mode .notifications-card,
+html.dark-mode .settings-actions,
+html.dark-mode .wallet-widget,
+html.dark-mode .statistics-card,
+html.dark-mode .transactions-card,
+html.dark-mode .savings-card,
+html.dark-mode .quick-actions-card,
+html.dark-mode .delete-modal__box,
+html.dark-mode .summary-card,
+html.dark-mode .transactions-widget,
+html.dark-mode .header-account__menu,
+html.dark-mode .profile-change-photo,
+html.dark-mode .sidebar-brand,
+html.dark-mode .delete-modal__cancel,
+html.dark-mode .wallet-widget__arrows button,
+html.dark-mode .confirm-modal__box,
+html.dark-mode .modal-cancel,
+html.dark-mode .transactions-modal__box,
+html.dark-mode .statistics-widget,
+html.dark-mode .savings-widget,
+html.dark-mode .header-account__menu,
+html.dark-mode .profile-change-photo,
+html.dark-mode .delete-account-button,
+html.dark-mode .delete-modal__cancel,
+html.dark-mode .wallet-widget__arrows button,
+html.dark-mode .confirm-modal__box,
+html.dark-mode .modal-cancel,
+html.dark-mode .transactions-modal__box,
+html.dark-mode .statistics-widget,
+html.dark-mode .savings-widget,
+html.dark-mode .wallet-overview-card,
+html.dark-mode .quick-actions,
+html.dark-mode .quick-action,
+html.dark-mode .spending-widget,
+html.dark-mode .view-analytics-button,
+html.dark-mode .upcoming-payments,
+html.dark-mode .add-card-modal__box,
+html.dark-mode .add-method,
+html.dark-mode .add-card-cancel,
+html.dark-mode .network-option,
+html.dark-mode .transfer-modal__dialog,
+html.dark-mode .transfer-search,
+html.dark-mode .transfer-amount,
+html.dark-mode .topup-card-picker,
+html.dark-mode .transfer-field input,
+html.dark-mode .transfer-cancel,
+html.dark-mode .topup-card-menu,
+html.dark-mode .transfer-card-option,
+html.dark-mode .topup-dialog,
+html.dark-mode .topup-card-option,
+html.dark-mode .topup-amount,
+html.dark-mode .topup-presets button,
+html.dark-mode .payment-method-option,
+html.dark-mode .topup-info,
+html.dark-mode .topup-cancel,
+html.dark-mode .payment-calendar-modal__box,
+html.dark-mode .payment-calendar-modal__controls button,
+html.dark-mode .calendar-payment-detail,
+html.dark-mode .register-page .steps__number,
+html.dark-mode .verify-page .steps__number {
+    background: #191c27;
+    border-color: #373d50;
+    color: white;
+}
+
+html.dark-mode .header-account__new,
+html.dark-mode .security-row button,
+html.dark-mode .profile-change-photo,
+html.dark-mode p,
+html.dark-mode small,
+html.dark-mode h1,
+html.dark-mode h2,
+html.dark-mode h3,
+html.dark-mode strong,
+html.dark-mode .nav-item,
+html.dark-mode .preferences-row,
+html.dark-mode .notification-row,
+html.dark-mode .security-row,
+html.dark-mode .profile-detail,
+html.dark-mode .selected-currency,
+html.dark-mode .spending-category>b,
+html.dark-mode .upcoming-payment>b,
+html.dark-mode .add-card-close,
+html.dark-mode .transfer-modal__close,
+html.dark-mode .topup-close,
+html.dark-mode .profile-detail span,
+html.dark-mode .transfer-field,
+html.dark-mode .transfer-recent-header,
+html.dark-mode .transfer-recipient,
+html.dark-mode .topup-label,
+html.dark-mode .my,
+html.dark-mode .calendar-weekdays span,
+html.dark-mode #verifyEmailAddress {
+    color: white;
+}
+
+html.dark-mode .header-account__new:hover,
+html.dark-mode .profile-change-photo:hover,
+html.dark-mode .preferences-row select:hover,
+html.dark-mode .delete-modal__cancel:hover,
+html.dark-mode .wallet-widget__arrows button:hover,
+html.dark-mode .modal-cancel:hover,
+html.dark-mode .currency-control button:hover,
+html.dark-mode .view-analytics-button:hover,
+html.dark-mode .add-card-cancel:hover,
+html.dark-mode .transfer-cancel:hover,
+html.dark-mode .topup-cancel:hover,
+html.dark-mode .payment-calendar-modal__controls button:hover {
+    background: #1a172c;
+}
+
+html.dark-mode .security-status,
+html.dark-mode .savings-total span {
+    background: #14a444;
+    color: #023b15;
+}
+
+html.dark-mode .delete-account-button:hover {
+    background: rgb(66, 14, 14);
+}
+
+html.dark-mode .preferences-row small,
+html.dark-mode .security-row small,
+html.dark-mode .transactions-header h2 span,
+html.dark-mode .transaction-details span,
+html.dark-mode .summary-card__label,
+html.dark-mode .page p,
+html.dark-mode .wallet-widget__title span,
+html.dark-mode .wallet-widget__info span,
+html.dark-mode .confirm-modal p,
+html.dark-mode .transactions-modal__header p,
+html.dark-mode .saving-goal__amounts,
+html.dark-mode .wallet-overview-card__top,
+html.dark-mode .quick-action__text small,
+html.dark-mode .spending-category>small,
+html.dark-mode .payment-info span,
+html.dark-mode .add-method small,
+html.dark-mode .add-card-modal__header p,
+html.dark-mode .transfer-fee,
+html.dark-mode .transfer-modal__subtitle,
+html.dark-mode .transfer-amount>span,
+html.dark-mode .topup-card-picker__text small,
+html.dark-mode .topup-dialog>p,
+html.dark-mode .topup-card-option small,
+html.dark-mode .transfer-card-option small,
+html.dark-mode .topup-amount strong,
+html.dark-mode .payment-method-option small,
+html.dark-mode .calendar-day.is-other-month,
+html.dark-mode .calendar-legend,
+html.dark-mode .calendar-payment-detail__info small,
+html.dark-mode .register-page .steps__item,
+html.dark-mode .register-card__heading p,
+html.dark-mode .field small,
+html.dark-mode .verify-card__text,
+html.dark-mode .timer, 
+html.dark-mode .resend,
+html.dark-mode .support,
+html.dark-mode .all-set-card>p,
+html.dark-mode .subtitle,
+html.dark-mode .create-account {
+    color: #777d91;
+}
+
+html.dark-mode .topbar-divider {
+    background: #373d50;
+}
+
+html.dark-mode .logout {
+    color: red;
+}
+
+html.dark-mode .logout:hover {
+    background: rgb(66, 14, 14);
+}
+
+html.dark-mode .period-tabs button.active,
+html.dark-mode .saving-progress,
+html.dark-mode .spending-category__bar {
+    background: #65666e;
+    color: white;
+}
+
+html.dark-mode .chart-tooltip,
+html.dark-mode .legend-current,
+html.dark-mode .chart-point-outer,
+html.dark-mode .cvv-row strong {
+    fill: black;
+    background: black;
+}
+
+html.dark-mode .saving-goal__amounts b,
+html.dark-mode .quick-action__arrow {
+    color: #808082;
+}
+
+
+html.dark-mode .bank-card {
+    box-shadow: 22px 14px 0 #202431;
+}
+
+html.dark-mode .currency-control button,
+html.dark-mode .calendar-button,
+html.dark-mode .transfer-recent-header button,
+html.dark-mode .steps__item.active,
+html.dark-mode a,
+html.dark-mode .verify-page .steps__item.done,
+html.dark-mode .resend button,
+html.dark-mode .steps,
+html.dark-mode .steps__item.done {
+    color: #9569fb;
+}
+
+html.dark-mode .wallet-overview-icon,
+html.dark-mode .quick-action__icon,
+html.dark-mode .spending-category__icon,
+html.dark-mode .add-method__icon,
+html.dark-mode .calendar-payment-name,
+html.dark-mode .email-icon,
+html.dark-mode .verified-box__icon {
+background: #202431;
+    border-color: #373d50;
+    color: #9569fb;
+}
+
+
+html.dark-mode .payment-logo.netflix,
+html.dark-mode .payment-logo.electricity {
+    background: #191c27;
+    border-color: #373d50;
+}
+
+html.dark-mode .add-card-divider {
+    background: #2d3140;
+}
+
+html.dark-mode .transfer-search input,
+html.dark-mode .transfer-amount input,
+html.dark-mode .topup-amount input {
+    background: #191c27; 
+}
+
+html.dark-mode .transfer-recipient.selected .recipient-avatar {
+    outline: 3px solid #9569fb;
+}
+
+html.dark-mode .transfer-card-option:hover,
+html.dark-mode .transfer-card-option.active,
+html.dark-mode .topup-card-option:hover,
+html.dark-mode .topup-card-option:active,
+html.dark-mode .topup-presets button:hover,
+html.dark-mode .topup-presets button:active,
+html.dark-mode .payment-method-option:hover,
+html.dark-mode .payment-method-option:active {
+    background: #3d2d66;
+}
+
+html.dark-mode .topup-info__icon svg {
+    fill: #14a444;
+}
+
+html.dark-mode .calendar-details,
+html.dark-mode .verified-box {
+    background: #161824;
+}
+
