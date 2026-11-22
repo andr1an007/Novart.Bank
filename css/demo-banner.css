@@ -1,0 +1,75 @@
+.demo-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: calc(100vw - 24px);
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #1f2937;
+  color: #f9fafb;
+  font: 500 12px/1.3 system-ui, -apple-system, "Segoe UI", sans-serif;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+.demo-banner strong {
+  flex: none;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #fbbf24;
+  color: #111827;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .demo-banner {
+    border-radius: 14px;
+    bottom: 8px;
+    font-size: 11px;
+  }
+}
+
+.demo-note,
+.register-card__heading p.demo-note {
+  margin: 14px 0 18px !important;
+  color: #78350f !important;
+  font-size: 13px !important;
+  text-align: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fef3c7;
+  color: #78350f;
+  line-height: 1.4;
+}
+
+.dark-mode .demo-note,
+.dark-mode .register-card__heading p.demo-note {
+  background: #3b2f10;
+  color: #fde68a !important;
+}
+
+.password-field input[readonly],
+.field input[readonly] {
+  cursor: default;
+}
+
+/* keep the main buttons on auth pages clear of the fixed banner */
+main.register-page,
+main.login-page,
+main.verify-page,
+main.all-set-page {
+  padding-bottom: 90px;
+}
+
+/* register page had a fixed height; let it grow with the extra note */
+main.register-page {
+  height: auto !important;
+  min-height: 100vh;
+}

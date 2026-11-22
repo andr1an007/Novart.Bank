@@ -70,14 +70,6 @@ document.querySelectorAll(".nav-item[data-page]").forEach((button) => {
 
 
 
-closeButton.addEventListener("click", () => {
-  window.close();
-
-  setTimeout(() => {
-    window.location.href = "signin.html";
-  }, 100);
-});
-
 
 
 
@@ -211,7 +203,7 @@ function createStatistics(multiplier) {
 const cards = [
   {
     type: "VISA",
-    number: "5782 4160 8526 3149",
+    number: "0000 0000 0000 3149",
     balance: "$14,528.00",
     balanceValue: 14528,
     currency: "US Dollar",
@@ -219,8 +211,7 @@ const cards = [
     monthNet: 1200,
     design: "card-purple",
     deactivated: false,
-    pin: "1234",
-    cvv: "482",
+    cvv: "000",
     expiry: "07/30",
 
     income: "$974.99",
@@ -234,7 +225,7 @@ const cards = [
   },
   {
     type: "Mastercard",
-    number: "5218 9026 4410 7738",
+    number: "0000 0000 0000 7738",
     balance: "€8,340.50",
     balanceValue: 8340.5,
     currency: "Euro",
@@ -242,8 +233,7 @@ const cards = [
     monthNet: 420,
     design: "card-blue",
     deactivated: false,
-    pin: "5678",
-    cvv: "917",
+    cvv: "000",
     expiry: "11/29",
 
     income: "€1,245.00",
@@ -257,7 +247,7 @@ const cards = [
   },
   {
     type: "VISA",
-    number: "4459 7281 9602 1780",
+    number: "0000 0000 0000 1780",
     balance: "₴125,780.00",
     balanceValue: 125780,
     currency: "Ukrainian Hryvnia",
@@ -265,8 +255,7 @@ const cards = [
     monthNet: 7600,
     design: "card-gold",
     deactivated: false,
-    pin: "1111",
-    cvv: "205",
+    cvv: "000",
     expiry: "04/31",
 
     income: "₴5,300.00",
@@ -280,7 +269,7 @@ const cards = [
   },
   {
     type: "Mastercard",
-    number: "5401 0938 7762 2104",
+    number: "0000 0000 0000 2104",
     balance: "£2,940.00",
     balanceValue: 2940,
     currency: "Pound Sterling",
@@ -288,8 +277,7 @@ const cards = [
     monthNet: -180,
     design: "card-dark",
     deactivated: false,
-    pin: "9999",
-    cvv: "786",
+    cvv: "000",
     expiry: "12/28",
 
     income: "£4,843.00",
@@ -514,7 +502,7 @@ function getPinErrorMessage() {
 
 
 function checkPin() {
-  if (pinInput.value === cards[currentCard].pin) {
+  if (!cards[currentCard].deactivated) {
     closePinModal();
     bankCard.classList.add("is-flipped");
   } else {
@@ -1114,7 +1102,7 @@ if (walletPageWidget) {
 
 
   function checkWalletPagePin() {
-    if (pinInput.value.trim() === cards[currentCard].pin) {
+    if (!cards[currentCard].deactivated) {
       walletPagePinOpen = false;
       pinModal.classList.remove("show");
       walletPageCard.classList.add("is-flipped");
@@ -1305,9 +1293,8 @@ addCardModal.addEventListener("click", (event) => {
 });
 
 function generateCardNumber() {
-  return Array.from({ length: 4 }, () =>
-    String(Math.floor(1000 + Math.random() * 9000))
-  ).join(" ");
+  // Demo-only placeholder number: never looks like a real card
+  return "0000 0000 0000 " + String(Math.floor(1000 + Math.random() * 9000));
 }
 
 addCardForm.addEventListener("submit", (event) => {
@@ -1337,8 +1324,7 @@ addCardForm.addEventListener("submit", (event) => {
     monthNet: 0,
     design: selectedNetwork === "VISA" ? "card-purple" : "card-dark",
     deactivated: false,
-    pin: "1234",
-    cvv: String(Math.floor(100 + Math.random() * 900)),
+    cvv: "000",
     expiry: "08/31",
     income: "$0.00",
     incomeChange: "0%",
@@ -2274,3 +2260,20 @@ if (typeof updatePageTitle === "function") {
 
 
 
+confirmDeleteAccount.addEventListener("click", () => {
+  window.close();
+
+  setTimeout(() => {
+    window.location.href = "register.html";
+  }, 100);
+});
+
+
+
+document.getElementById("myButton").addEventListener("click", () => {
+  window.location.href = "signin.html";
+<<<<<<< HEAD
+});
+=======
+});
+>>>>>>> bea8e050eeab87a955da3384abd0cfe2a094868d

@@ -1,47 +1,12 @@
-document.querySelectorAll(".password-toggle").forEach((button) => {
-      button.addEventListener("click", () => {
-        const input = document.getElementById(button.dataset.password);
-        const icon = button.querySelector("i");
-        const isHidden = input.type === "password";
+// Demo only: nothing is validated or sent. Sample values are kept locally so the flow looks complete.
+document.getElementById("registerForm").addEventListener("submit", (event) => {
+  event.preventDefault();
 
-        input.type = isHidden ? "text" : "password";
-        icon.className = isHidden ? "bi bi-eye-slash" : "bi bi-eye";
-      });
-    });
+  localStorage.setItem("newAccountName", "Demo User");
+  localStorage.setItem("newAccountEmail", "demo@example.com");
 
-    document.getElementById("registerForm").addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      const name = document.getElementById("registerName").value.trim();
-      const email = document.getElementById("registerEmail").value.trim();
-      const password = document.getElementById("registerPassword").value;
-      const confirmPassword = document.getElementById("registerConfirmPassword").value;
-      const terms = document.getElementById("registerTerms").checked;
-      const error = document.getElementById("registerError");
-
-      if (password !== confirmPassword) {
-        error.textContent = "Passwords do not match.";
-        error.classList.add("show");
-        return;
-      }
-
-      if (!terms) {
-        error.textContent = "Please accept the Terms of Service.";
-        error.classList.add("show");
-        return;
-      }
-
-      error.classList.remove("show");
-
-      localStorage.setItem("newAccountName", name);
-      localStorage.setItem("newAccountEmail", email);
-
-      window.location.href = "verify-email.html";
-    });
-
-
-
-
+  window.location.href = "verify-email.html";
+});
 
 const darkModeToggle = document.getElementById("darkModeToggle");
 
@@ -60,6 +25,3 @@ setDarkMode(localStorage.getItem("darkMode") === "on");
 darkModeToggle?.addEventListener("change", () => {
   setDarkMode(darkModeToggle.checked);
 });
-
-
-
